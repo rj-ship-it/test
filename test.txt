@@ -1,1 +1,23 @@
-test
+
+if(srcAddress.getChadrChitlNbr().equals(rdsAddress.getCustomerId())
+        && srcAddress.getChadrTypCde().equals(rdsAddress.getAddressTypeCode().name())
+        && "MAILING".equals(rdsAddress.getAddressCategory().name())) {
+        
+        return !Objects.equals(StringUtils.defaultString(srcAddress.getChadrAdr1()), StringUtils.defaultString(rdsAddress.getAddressLine1())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChadrAdr2()), StringUtils.defaultString(rdsAddress.getAddressLine2())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChadrCityNme()), StringUtils.defaultString(rdsAddress.getCity())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChadrStNme()), StringUtils.defaultString(rdsAddress.getState())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChadrZip4Cde()), StringUtils.defaultString(rdsAddress.getZip4Code())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChadrZip5Cde()), StringUtils.defaultString(rdsAddress.getZip5Code())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChadrCntryCde()), StringUtils.defaultString(rdsAddress.getCountry())) ||
+               !Objects.equals(srcAddress.getChadrLastMntncTms(), rdsAddress.getLastMaintenanceTimestamp()) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChtmtStCnfdnCde()), StringUtils.defaultString(rdsAddress.getTreatmentStCnfdnCode())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChtmtIt1BLkLCde()), StringUtils.defaultString(rdsAddress.getTreatmentIt1BlkLkCode())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChtmtFrdBLkCde()), StringUtils.defaultString(rdsAddress.getTreatmentFrdBlkCode())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChtmtAdrCompCde()), StringUtils.defaultString(rdsAddress.getTreatmentAdrCompCode())) ||
+               !Objects.equals(StringUtils.defaultString(srcAddress.getChtmtCusReqDte()), StringUtils.defaultString(rdsAddress.getTreatmentCusReqDte())) ||
+               !Objects.equals(srcAddress.getChtmtLastMntncTms(), rdsAddress.getTreatmentLastMaintenanceTimestamp());
+    }
+
+    return true;
+}
